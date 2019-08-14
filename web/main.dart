@@ -138,7 +138,7 @@ loadDoll(){
   print(ds);
   ie('name').value = ds.substring(0, ds.indexOf(':'));
   ie('labelPlate').value = ':___';
-  ds = ds.substring(ds.indexOf(':')+4);
+  ds = ds.split(':___')[1];
   ImprovedByteReader br = ImprovedByteReader(base64Decode(ds).buffer);
   ie('type').value = br.readExpGolomb().toString();
   ie('paletteLength').value = br.readExpGolomb().toString();
